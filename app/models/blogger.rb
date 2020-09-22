@@ -31,4 +31,8 @@ class Blogger < ApplicationRecord
     end[0..4]
   end
 
+  def post_count
+    self.posts.length
+  end
+
 end

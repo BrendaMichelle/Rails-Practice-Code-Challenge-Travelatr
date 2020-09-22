@@ -1,5 +1,10 @@
 class BloggersController < ApplicationController
 
+  def index
+    @bloggers = Blogger.all
+    render :index
+  end
+
   def new
     @blogger = Blogger.new
   end

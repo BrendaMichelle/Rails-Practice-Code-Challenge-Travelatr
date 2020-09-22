@@ -1,0 +1,17 @@
+<h1><%= @destination.name %> - <%= @destination.country %></h1>
+
+<h3>Most recent posts:</h3>
+<ul>
+<% @destination.get_five_most_recent_posts.each do |post| %>
+    <li>
+        <%= link_to post.title, "/posts/#{post.id}" %>
+    </li>
+    <br>
+<% end %>
+</ul>
+
+<h3>Featured Post:</h3>
+<p>
+    <%= link_to @destination.get_most_liked_post.title, "/posts/#{@destination.get_most_liked_post.id}"  %>
+</p>
+
